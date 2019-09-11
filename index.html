@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>Grade Calculator</title>
+        <link href="index_css.css" type="text/css" rel="stylesheet">
+        <script src="C:\WEB\Practice Projects\JQuery\jquery-3.4.1.js"></script>
+        <script src="C:\WEB\Practice Projects\Bootstrap\bootstrap-4.2.1-dist\bootstrap-4.2.1-dist\js"></script>
+        <link href="C:\WEB\Practice Projects\Bootstrap\bootstrap-4.2.1-dist\bootstrap-4.2.1-dist\css">
+    </head>
+    <body>
+        <div class="main container">
+            <div class="heading container">
+                GRADE<br>CALCULATOR
+            </div>
+            <input type="text" class="input" id="input_1" placeholder="MATHEMATICS">
+            <input type="text" class="input" id="input_2" placeholder="CHEMISTRY">
+            <input type="text" class="input" id="input_3" placeholder="PHYSICS">
+            <input type="text" class="input" id="input_4" placeholder="ENGLISH">
+            <div class="button-div">
+                <input type="button" value="GET GRADE" class="button container" id="button">
+                </div>
+            <div class="result"></div>
+        </div>
+
+        <script type="text/javascript">
+            $("#button").hover(function()
+            {
+                $(this).css('font-size','34px');
+                $(this).css('margin-left','-3.5%');
+                $(this).css('margin-top','-0.5%');
+                $(this).css('width','110%');
+            },
+            function()
+            {
+                $(this).css('font-size','160%');
+                $(this).css('margin-left','0%');
+                $(this).css('margin-top','0%');
+                $(this).css('width','100%');
+            });
+
+            $(".button").click(function()
+            {
+                var m1=parseInt($("#input_1").val());
+                var m2=parseInt($("#input_2").val());
+                var m3=parseInt($("#input_3").val());
+                var m4=parseInt($("#input_4").val());
+
+                var per= (m1+m2+m3+m4)/4;
+                if(per>80)
+                $(".result").html("CONGRATS..<br>You got "+per+"%");
+                else if(per>60)
+                $(".result").html("WELL DONE..<br>You got "+per+"%");
+                else if(per>40)
+                $(".result").html("NEED TO WORK HARD..<br>You got "+per+"%");
+                else
+                $(".result").html("SORRY!! YOU ARE FAIL..<br>You got "+per+"%");
+            });
+        </script>
+    </body>
+</html>
